@@ -1,0 +1,52 @@
+/* Profile page container */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Heading */
+.container h2 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 8px;
+}
+
+/* Profile details */
+.container p {
+  font-size: 1rem;
+  color: #374151;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Labels */
+.container strong {
+  color: #111827;
+  margin-right: 8px;
+}
+
+/* Loading state */
+.container p:last-child {
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    margin: 20px;
+    padding: 16px;
+  }
+  .container h2 {
+    font-size: 1.5rem;
+  }
+}

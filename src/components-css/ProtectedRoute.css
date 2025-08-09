@@ -1,0 +1,32 @@
+.protected-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f9fafb);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(79, 70, 229, 0.2);
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  animation: spin 0.9s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(79, 70, 229, 0.4);
+}
+
+.loading-text {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
