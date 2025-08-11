@@ -62,4 +62,32 @@
   .task-item div:last-child {
     text-align: left;
   }
+  .task-item button {
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.task-item button:hover {
+  transform: scale(1.05);
+}
+
+.task-item button:active {
+  transform: scale(0.97);
+}
+
+.task-item button:first-of-type {
+  background: #f59e0b; /* orange */
+  color: white;
+}
+
+.task-item button:last-of-type {
+  background: #ef4444; /* red */
+  color: white;
+}
+
 }
