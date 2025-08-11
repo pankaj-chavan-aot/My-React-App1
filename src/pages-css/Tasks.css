@@ -1,30 +1,114 @@
+/* ✅ Modal Background Overlay */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.25s ease-in-out;
 }
 
+/* ✅ Modal Box */
 .modal {
   background: white;
-  padding: 20px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: slideUp 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ✅ Input Fields */
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
-  max-width: 400px;
-  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.modal input, .modal textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+.modal input:focus,
+.modal textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  outline: none;
 }
 
+.modal textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ✅ Modal Actions */
 .modal-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Save button */
+.modal-actions button:first-of-type {
+  background: #4f46e5;
+  color: white;
+}
+
+.modal-actions button:first-of-type:hover {
+  background: #4338ca;
+  transform: scale(1.03);
+}
+
+/* Cancel button */
+.modal-actions button:last-of-type {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.modal-actions button:last-of-type:hover {
+  background: #d1d5db;
+  transform: scale(1.03);
+}
+
+/* ✅ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+  .modal {
+    max-width: 90%;
+    padding: 16px;
+  }
 }
