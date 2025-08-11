@@ -1,4 +1,4 @@
-.task-list { 
+/* .task-list { 
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -53,7 +53,7 @@
   font-weight: 500;
 }
 
-/* ✅ Buttons styling — main level वर */
+✅ Buttons styling — main level वर
 .task-item button {
   cursor: pointer;
   font-size: 0.85rem;
@@ -75,14 +75,14 @@
 
 .task-item button:first-of-type {
   background: #f59e0b; /* orange */
-}
+/*}
 
 .task-item button:last-of-type {
   background: #ef4444; /* red */
-}
+
 
 /* 📱 Mobile view adjustments */
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   .task-item {
     flex-direction: column;
     gap: 6px;
@@ -91,4 +91,72 @@
   .task-item div:last-child {
     text-align: left;
   }
+} */
+
+
+/* #-------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal-actions button:first-of-type {
+  background: #4f46e5;
+  color: white;
+}
+
+.modal-actions button:last-of-type {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
